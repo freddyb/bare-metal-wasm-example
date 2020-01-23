@@ -14,7 +14,7 @@
         canvas.width = width;
         canvas.height = height;
 
-        const buffer_address = instance.exports.BUFFER.value;
+        const buffer_address = instance.exports.addr();
         const image = new ImageData(
             new Uint8ClampedArray(
                 instance.exports.memory.buffer,

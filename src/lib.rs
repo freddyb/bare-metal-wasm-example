@@ -13,6 +13,11 @@ const HEIGHT: usize = 600;
 #[no_mangle]
 static mut BUFFER: [u32; WIDTH * HEIGHT] = [0; WIDTH * HEIGHT];
 
+#[no_mangle]
+pub unsafe extern fn addr() -> &'static [u32; WIDTH * HEIGHT] {
+    &BUFFER
+}
+
 static FRAME: AtomicU32 = AtomicU32::new(0);
 
 #[no_mangle]
