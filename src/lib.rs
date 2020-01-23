@@ -34,7 +34,7 @@ fn render_frame_safe(buffer: &mut [u32; WIDTH * HEIGHT]) {
 
     for y in 0..HEIGHT {
         for x in 0..WIDTH {
-            buffer[y * WIDTH + x] = f.wrapping_add((x ^ y) as u32) | 0xFF_00_00_00;
+            buffer[y * WIDTH + x] = f.wrapping_add((x ^ y) as u32) | 0xFF_FF_FF_00; // AA BB GG RR
         }
     }
 }
